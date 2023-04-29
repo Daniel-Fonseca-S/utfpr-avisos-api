@@ -1,0 +1,5 @@
+edu\ssic\service\DisciplinaService.class
+edu\ssic\repository\DisciplinaRepository.class
+META-INF\panache-archive.marker
+edu\ssic\entity\Disciplina.class
+edu\ssic\controller\DisciplinaController.class
