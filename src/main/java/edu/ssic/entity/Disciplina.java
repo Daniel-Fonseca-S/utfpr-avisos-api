@@ -1,10 +1,11 @@
 package edu.ssic.entity;
 
 import lombok.*;
-import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Getter
@@ -24,16 +25,6 @@ public class Disciplina {
     @Column(name = "nome", nullable = false, length = 55)
     private String nome;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Disciplina that = (Disciplina) o;
-        return id != null && Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+    @ManyToMany(mappedBy = "disciplinaList", fetch = FetchType.LAZY)
+    private List<Usuario> usuarioList = new ArrayList<>();
 }
