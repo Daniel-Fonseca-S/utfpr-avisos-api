@@ -1,6 +1,6 @@
 package edu.ssic.service;
 
-import edu.ssic.entity.Disciplina;
+
 import edu.ssic.entity.Usuario;
 import edu.ssic.repository.UsuarioRepository;
 
