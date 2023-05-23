@@ -1,7 +1,8 @@
 package edu.ssic.controller;
 
-import edu.ssic.entity.Disciplina;
-import edu.ssic.service.DisciplinaService;
+
+import edu.ssic.entity.Usuario;
+import edu.ssic.service.UsuarioService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -9,40 +10,41 @@ import javax.ws.rs.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/disciplina")
-public class DisciplinaController{
+@Path("/usuario")
+public class UsuarioController {
+
     @Inject
-    DisciplinaService disciplinaService;
+    UsuarioService usuarioService;
 
     @GET
-    public List<Disciplina> retrieveAll() {
-        List<Disciplina> disciplinas = new ArrayList<>();
+    public List<Usuario> retrieveAll() {
+        List<Usuario> usuario = new ArrayList<>();
         try {
-            disciplinas = disciplinaService.retrieveAll();
+            usuario = usuarioService.retrieveAll();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return disciplinas;
+        return usuario;
     }
 
     @GET
     @Path("/{id}")
-    public Disciplina retrieve(Long id) {
-        Disciplina disciplina = new Disciplina();
+    public Usuario retrieve(Long id) {
+        Usuario usuario = new Usuario();
         try {
-            disciplina = disciplinaService.retrieve(id);
+            usuario = usuarioService.retrieve(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return disciplina;
+        return usuario;
     }
 
     @POST
     @Transactional
-    public Object create(Disciplina disciplina) {
+    public Object create(Usuario usuario) {
         try {
-            disciplinaService.create(disciplina);
-            return disciplina;
+            usuarioService.create(usuario);
+            return usuario;
         } catch (Exception e) {
             e.printStackTrace();
             return e.getMessage();
@@ -51,13 +53,13 @@ public class DisciplinaController{
 
     @PUT
     @Transactional
-    public Disciplina update(Disciplina disciplina) {
+    public Usuario update(Usuario usuario) {
         try {
-            disciplinaService.update(disciplina);
+            usuarioService.update(usuario);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return disciplina;
+        return usuario;
     }
 
     @DELETE
@@ -65,8 +67,8 @@ public class DisciplinaController{
     @Transactional
     public String delete(Long id) {
         try {
-            disciplinaService.delete(id);
-            return "Disciplina excluída com sucesso!";
+            usuarioService.delete(id);
+            return "Usuario excluída com sucesso!";
         } catch (Exception e) {
             e.printStackTrace();
             return e.getMessage();
