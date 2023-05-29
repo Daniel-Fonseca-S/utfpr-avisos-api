@@ -13,7 +13,15 @@ public class DisciplinaService {
     DisciplinaRepository disciplinaRepository;
 
     public List<Disciplina> retrieveAll() {
-        return disciplinaRepository.findAll().list();
+        List<Disciplina> disciplinaList = disciplinaRepository.findAll().list();
+        return disciplinaList.stream().peek(d -> {
+            d.setUsuarioList(d.getUsuarioList().stream().peek(u -> {
+                u.setDisciplinaList(null);
+            }).collect(java.util.stream.Collectors.toList()));
+            d.setAvisoList(d.getAvisoList().stream().peek(a -> {
+                a.setDisciplina(null);
+            }).collect(java.util.stream.Collectors.toList()));
+        }).toList();
     }
 
     public Disciplina retrieve(Long id) {

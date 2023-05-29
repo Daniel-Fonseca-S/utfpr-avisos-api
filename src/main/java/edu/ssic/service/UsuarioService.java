@@ -17,7 +17,12 @@ public class UsuarioService {
             if (usuarioRepository.find("email", email).firstResult().getSenha().equals(senha)) {
                 Usuario usuario = usuarioRepository.find("email", email).firstResult();
                 usuario.setDisciplinaList(
-                        usuario.getDisciplinaList().stream().peek(d -> d.setUsuarioList(null)).collect(Collectors.toList())
+                        usuario.getDisciplinaList().stream().peek(d -> {
+                            d.setUsuarioList(null);
+                            d.setAvisoList(d.getAvisoList().stream().peek(a -> {
+                                a.setDisciplina(null);
+                            }).collect(Collectors.toList()));
+                        }).collect(Collectors.toList())
                 );
                 return usuario;
             } else {
