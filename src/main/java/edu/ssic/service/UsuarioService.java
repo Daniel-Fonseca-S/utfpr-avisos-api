@@ -5,7 +5,6 @@ import edu.ssic.repository.UsuarioRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
@@ -16,7 +15,7 @@ public class UsuarioService {
     public Usuario retrieve(String email, String senha) {
         try {
             if (usuarioRepository.find("email", email).firstResult().getSenha().equals(senha)) {
-                Usuario usuario =  usuarioRepository.find("email", email).firstResult();
+                Usuario usuario = usuarioRepository.find("email", email).firstResult();
                 usuario.setDisciplinaList(
                         usuario.getDisciplinaList().stream().peek(d -> d.setUsuarioList(null)).collect(Collectors.toList())
                 );

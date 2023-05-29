@@ -7,7 +7,6 @@ import edu.ssic.repository.DisciplinaRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
@@ -19,7 +18,7 @@ public class AvisoService {
     DisciplinaRepository disciplinaRepository;
 
     public List<Aviso> retrieveAll(Long idDisciplina) {
-        List<Aviso> avisoList = new ArrayList<>();
+        List<Aviso> avisoList;
         if (idDisciplina == null) {
             avisoList = avisoRepository.findAll().list();
             return avisoList.stream().peek(aviso -> {
