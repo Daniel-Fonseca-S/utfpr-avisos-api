@@ -1,11 +1,13 @@
 package edu.ssic.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 @Entity
 @Getter
@@ -27,4 +29,7 @@ public class Disciplina {
 
     @ManyToMany(mappedBy = "disciplinaList", fetch = FetchType.LAZY)
     private List<Usuario> usuarioList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "disciplina", fetch = FetchType.LAZY)
+    private List<Aviso> avisoList = new ArrayList<>();
 }

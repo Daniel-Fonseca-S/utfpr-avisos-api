@@ -17,7 +17,9 @@ public class DisciplinaService {
     }
 
     public Disciplina retrieve(Long id) {
-        return disciplinaRepository.findById(id);
+        Disciplina disciplina = disciplinaRepository.findById(id);
+        disciplina.setUsuarioList(null);
+        return disciplina;
     }
 
     public void create(Disciplina disciplina) {

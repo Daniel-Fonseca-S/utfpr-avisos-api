@@ -6,9 +6,10 @@ import edu.ssic.service.UsuarioService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
 
 @Path("/usuario")
 public class UsuarioController {
@@ -16,27 +17,10 @@ public class UsuarioController {
     @Inject
     UsuarioService usuarioService;
 
-    @GET
-    public List<Usuario> retrieveAll() {
-        List<Usuario> usuario = new ArrayList<>();
-        try {
-            usuario = usuarioService.retrieveAll();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return usuario;
-    }
-
-    @GET
-    @Path("/{id}")
-    public Usuario retrieve(Long id) {
-        Usuario usuario = new Usuario();
-        try {
-            usuario = usuarioService.retrieve(id);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return usuario;
+    @POST
+    @Path("/login")
+    public Usuario retrieve(Usuario usuario) {
+        return usuarioService.retrieve(usuario.getEmail(), usuario.getSenha());
     }
 
     @POST
@@ -63,12 +47,11 @@ public class UsuarioController {
     }
 
     @DELETE
-    @Path("/{id}")
     @Transactional
-    public String delete(Long id) {
+    public String delete(Usuario usuario) {
         try {
-            usuarioService.delete(id);
-            return "Usuario excluída com sucesso!";
+            usuarioService.delete(usuario.getEmail(), usuario.getSenha());
+            return "Usuario " + usuario.getEmail() + " deleted";
         } catch (Exception e) {
             e.printStackTrace();
             return e.getMessage();

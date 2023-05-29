@@ -1,8 +1,12 @@
 edu\ssic\service\DisciplinaService.class
-edu\ssic\entity\Usuario.class
+edu\ssic\service\AvisoService.class
 edu\ssic\repository\DisciplinaRepository.class
 edu\ssic\entity\Disciplina.class
-edu\ssic\controller\UsuarioController.class
 edu\ssic\service\UsuarioService.class
-edu\ssic\controller\DisciplinaController.class
 edu\ssic\repository\UsuarioRepository.class
+edu\ssic\entity\Aviso.class
+edu\ssic\entity\Usuario.class
+edu\ssic\repository\AvisoRepository.class
+edu\ssic\controller\UsuarioController.class
+edu\ssic\controller\AvisoController.class
+edu\ssic\controller\DisciplinaController.class

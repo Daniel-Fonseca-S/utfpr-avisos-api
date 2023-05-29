@@ -1,53 +1,73 @@
 package edu.ssic.service;
 
-
 import edu.ssic.entity.Usuario;
 import edu.ssic.repository.UsuarioRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class UsuarioService {
-
     @Inject
     UsuarioRepository usuarioRepository;
 
-    public List<Usuario> retrieveAll(){return usuarioRepository.findAll().list();}
-
-    public Usuario retrieve(long id){return usuarioRepository.findById(id);}
-
-
-    public void create(Usuario usuario){
-        if (usuarioRepository.findAll().stream().anyMatch(d -> d.getRa().equals(usuario.getRa()))){
-            throw new IllegalArgumentException("Ra"+ usuario.getRa() + " já existente");
+    public Usuario retrieve(String email, String senha) {
+        try {
+            if (usuarioRepository.find("email", email).firstResult().getSenha().equals(senha)) {
+                Usuario usuario =  usuarioRepository.find("email", email).firstResult();
+                usuario.setDisciplinaList(
+                        usuario.getDisciplinaList().stream().peek(d -> d.setUsuarioList(null)).collect(Collectors.toList())
+                );
+                return usuario;
+            } else {
+                throw new IllegalArgumentException("Senha incorreta");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IllegalArgumentException("Usuario " + email + " not found");
         }
-        usuarioRepository.persist(usuario);
+    }
+
+    public void create(Usuario usuario) {
+        if (usuarioRepository.findAll().stream().anyMatch(d -> d.getRa().equals(usuario.getRa()))) {
+            throw new IllegalArgumentException("Usuario " + usuario.getRa() + " already exists");
+        }
+        if (usuarioRepository.findAll().stream().anyMatch(d -> d.getEmail().equals(usuario.getEmail()))) {
+            throw new IllegalArgumentException("Usuario " + usuario.getEmail() + " already exists");
+        }
+        try {
+            usuarioRepository.persist(usuario);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void update(Usuario usuario) {
-        if (usuario.getId() == null){
+        if (usuario.getId() == null) {
             throw new IllegalArgumentException("Usuario id cannot be null");
         }
-        Usuario usuarioToUpdate = retrieve(usuario.getId());
+        Usuario usuarioToUpdate = retrieve(usuario.getEmail(), usuario.getSenha());
         if (usuarioToUpdate == null) {
-            throw new IllegalArgumentException("Usuario " + usuario.getId() + " not found");
+            throw new IllegalArgumentException("Usuario " + usuario.getEmail() + " not found");
         }
-        usuarioToUpdate.setRa(usuario.getRa());
         usuarioToUpdate.setNome(usuario.getNome());
-        usuarioToUpdate.setTipo(usuario.getTipo());
-        usuarioToUpdate.setSenha(usuario.getSenha());
+        usuarioToUpdate.setRa(usuario.getRa());
         usuarioToUpdate.setEmail(usuario.getEmail());
+        usuarioToUpdate.setSenha(usuario.getSenha());
+        usuarioToUpdate.setDisciplinaList(usuario.getDisciplinaList());
+
+        delete(usuario.getEmail(), usuario.getSenha());
         usuarioRepository.persist(usuarioToUpdate);
     }
 
-    public void delete(Long id) {
-        Usuario usuario = retrieve(id);
+    public void delete(String email, String senha) {
+        Usuario usuario = retrieve(email, senha);
         if (usuario != null) {
             usuarioRepository.delete(usuario);
         } else {
-            throw new IllegalArgumentException("Usuario " + id + " not found");
+            throw new IllegalArgumentException("Usuario " + email + " not found");
         }
     }
 }
