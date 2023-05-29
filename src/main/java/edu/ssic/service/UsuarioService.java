@@ -19,9 +19,7 @@ public class UsuarioService {
                 usuario.setDisciplinaList(
                         usuario.getDisciplinaList().stream().peek(d -> {
                             d.setUsuarioList(null);
-                            d.setAvisoList(d.getAvisoList().stream().peek(a -> {
-                                a.setDisciplina(null);
-                            }).collect(Collectors.toList()));
+                            d.setAvisoList(d.getAvisoList().stream().peek(a -> a.setDisciplina(null)).collect(Collectors.toList()));
                         }).collect(Collectors.toList())
                 );
                 return usuario;
