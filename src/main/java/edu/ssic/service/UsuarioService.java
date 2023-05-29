@@ -12,10 +12,10 @@ public class UsuarioService {
     @Inject
     UsuarioRepository usuarioRepository;
 
-    public Usuario retrieve(String email, String senha) {
+    public Usuario retrieve(String ra, String senha) {
         try {
-            if (usuarioRepository.find("email", email).firstResult().getSenha().equals(senha)) {
-                Usuario usuario = usuarioRepository.find("email", email).firstResult();
+            if (usuarioRepository.find("ra", ra).firstResult().getSenha().equals(senha)) {
+                Usuario usuario = usuarioRepository.find("ra", ra).firstResult();
                 usuario.setDisciplinaList(
                         usuario.getDisciplinaList().stream().peek(d -> {
                             d.setUsuarioList(null);
@@ -28,7 +28,7 @@ public class UsuarioService {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new IllegalArgumentException("Usuario " + email + " not found");
+            throw new IllegalArgumentException("Usuario " + ra + " not found");
         }
     }
 
@@ -50,9 +50,9 @@ public class UsuarioService {
         if (usuario.getId() == null) {
             throw new IllegalArgumentException("Usuario id cannot be null");
         }
-        Usuario usuarioToUpdate = retrieve(usuario.getEmail(), usuario.getSenha());
+        Usuario usuarioToUpdate = retrieve(usuario.getRa(), usuario.getSenha());
         if (usuarioToUpdate == null) {
-            throw new IllegalArgumentException("Usuario " + usuario.getEmail() + " not found");
+            throw new IllegalArgumentException("Usuario " + usuario.getRa() + " not found");
         }
         usuarioToUpdate.setNome(usuario.getNome());
         usuarioToUpdate.setRa(usuario.getRa());

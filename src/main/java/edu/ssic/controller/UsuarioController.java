@@ -20,7 +20,7 @@ public class UsuarioController {
     @POST
     @Path("/login")
     public Usuario retrieve(Usuario usuario) {
-        return usuarioService.retrieve(usuario.getEmail(), usuario.getSenha());
+        return usuarioService.retrieve(usuario.getRa(), usuario.getSenha());
     }
 
     @POST
