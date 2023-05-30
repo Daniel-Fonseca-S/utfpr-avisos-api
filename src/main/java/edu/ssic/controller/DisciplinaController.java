@@ -6,10 +6,13 @@ import edu.ssic.service.DisciplinaService;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
 @Path("/disciplina")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class DisciplinaController{
     @Inject
     DisciplinaService disciplinaService;

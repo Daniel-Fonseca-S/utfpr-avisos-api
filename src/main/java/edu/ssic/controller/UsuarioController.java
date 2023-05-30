@@ -6,12 +6,12 @@ import edu.ssic.service.UsuarioService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 @Path("/usuario")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class UsuarioController {
 
     @Inject

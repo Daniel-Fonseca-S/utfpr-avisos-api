@@ -8,5 +8,6 @@ edu\ssic\entity\Aviso.class
 edu\ssic\entity\Usuario.class
 edu\ssic\repository\AvisoRepository.class
 edu\ssic\controller\UsuarioController.class
+edu\ssic\UtfprAvisosApi.class
 edu\ssic\controller\AvisoController.class
 edu\ssic\controller\DisciplinaController.class

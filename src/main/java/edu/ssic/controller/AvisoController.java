@@ -6,9 +6,12 @@ import edu.ssic.service.AvisoService;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/aviso")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class AvisoController {
     @Inject
     AvisoService avisoService;
