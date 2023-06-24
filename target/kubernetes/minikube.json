@@ -4,7 +4,7 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/commit-id" : "9cc466854dfc0524f66c06febfd9e86cd1a86e1c",
-      "app.quarkus.io/build-timestamp" : "2023-06-17 - 20:16:09 +0000"
+      "app.quarkus.io/build-timestamp" : "2023-06-14 - 20:10:00 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "utfpr-avisos-api",
@@ -24,7 +24,7 @@
       "metadata" : {
         "annotations" : {
           "app.quarkus.io/commit-id" : "9cc466854dfc0524f66c06febfd9e86cd1a86e1c",
-          "app.quarkus.io/build-timestamp" : "2023-06-17 - 20:16:09 +0000"
+          "app.quarkus.io/build-timestamp" : "2023-06-14 - 20:10:00 +0000"
         },
         "labels" : {
           "app.kubernetes.io/name" : "utfpr-avisos-api",
@@ -59,7 +59,7 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/commit-id" : "9cc466854dfc0524f66c06febfd9e86cd1a86e1c",
-      "app.quarkus.io/build-timestamp" : "2023-06-17 - 20:16:09 +0000"
+      "app.quarkus.io/build-timestamp" : "2023-06-14 - 20:10:00 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "utfpr-avisos-api",

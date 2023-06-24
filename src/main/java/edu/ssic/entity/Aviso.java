@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Getter
@@ -38,4 +39,7 @@ public class Aviso {
     @ManyToOne
     @JoinColumn(name = "disciplina_id", nullable = false)
     private Disciplina disciplina;
+
+    @Column(name = "data_referente", nullable = false)
+    private ZonedDateTime dataReferente;
 }
