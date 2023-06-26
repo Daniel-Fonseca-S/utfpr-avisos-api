@@ -50,8 +50,8 @@ public class UsuarioController {
     @Transactional
     public String delete(Usuario usuario) {
         try {
-            usuarioService.delete(usuario.getEmail(), usuario.getSenha());
-            return "Usuario " + usuario.getEmail() + " deleted";
+            usuarioService.delete(usuario.getRa(), usuario.getSenha());
+            return "Usuario " + usuario.getRa() + " deleted";
         } catch (Exception e) {
             e.printStackTrace();
             return e.getMessage();

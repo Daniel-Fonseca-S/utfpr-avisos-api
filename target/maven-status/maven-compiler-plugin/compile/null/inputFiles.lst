@@ -1,13 +1,13 @@
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\controller\AvisoController.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\entity\Disciplina.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\service\DisciplinaService.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\UtfprAvisosApi.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\service\UsuarioService.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\controller\UsuarioController.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\entity\Usuario.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\service\AvisoService.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\repository\AvisoRepository.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\controller\DisciplinaController.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\repository\DisciplinaRepository.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\entity\Aviso.java
-C:\Users\danie\Documents\utfpr\Fabrica de software\utfpr-avisos-general\utfpr-avisos-api\src\main\java\edu\ssic\repository\UsuarioRepository.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\entity\Usuario.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\repository\AvisoRepository.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\entity\Aviso.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\service\DisciplinaService.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\controller\AvisoController.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\controller\UsuarioController.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\repository\UsuarioRepository.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\UtfprAvisosApi.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\controller\DisciplinaController.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\repository\DisciplinaRepository.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\entity\Disciplina.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\service\UsuarioService.java
+C:\UTFPR\FS26FS\utfpr-avisos-api\src\main\java\edu\ssic\service\AvisoService.java

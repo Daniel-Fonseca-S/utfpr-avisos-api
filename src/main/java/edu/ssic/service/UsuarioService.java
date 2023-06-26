@@ -64,12 +64,12 @@ public class UsuarioService {
         usuarioRepository.persist(usuarioToUpdate);
     }
 
-    public void delete(String email, String senha) {
-        Usuario usuario = retrieve(email, senha);
+    public void delete(String ra, String senha) {
+        Usuario usuario = retrieve(ra, senha);
         if (usuario != null) {
             usuarioRepository.delete(usuario);
         } else {
-            throw new IllegalArgumentException("Usuario " + email + " not found");
+            throw new IllegalArgumentException("Usuario " + ra + " not found");
         }
     }
 }
