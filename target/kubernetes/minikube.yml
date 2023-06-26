@@ -3,8 +3,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    app.quarkus.io/commit-id: 1e6bfc9772f508658338dd35175bbea1f6ee3fa5
-    app.quarkus.io/build-timestamp: 2023-06-24 - 21:19:19 +0000
+    app.quarkus.io/commit-id: 66288b858e258fcef3e4d8a0160b11a45a67fc37
+    app.quarkus.io/build-timestamp: 2023-06-26 - 15:17:47 +0000
   labels:
     app.kubernetes.io/name: utfpr-avisos-api
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -18,8 +18,8 @@ spec:
   template:
     metadata:
       annotations:
-        app.quarkus.io/commit-id: 1e6bfc9772f508658338dd35175bbea1f6ee3fa5
-        app.quarkus.io/build-timestamp: 2023-06-24 - 21:19:19 +0000
+        app.quarkus.io/commit-id: 66288b858e258fcef3e4d8a0160b11a45a67fc37
+        app.quarkus.io/build-timestamp: 2023-06-26 - 15:17:47 +0000
       labels:
         app.kubernetes.io/name: utfpr-avisos-api
         app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -42,8 +42,8 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    app.quarkus.io/commit-id: 1e6bfc9772f508658338dd35175bbea1f6ee3fa5
-    app.quarkus.io/build-timestamp: 2023-06-24 - 21:19:19 +0000
+    app.quarkus.io/commit-id: 66288b858e258fcef3e4d8a0160b11a45a67fc37
+    app.quarkus.io/build-timestamp: 2023-06-26 - 15:17:47 +0000
   labels:
     app.kubernetes.io/name: utfpr-avisos-api
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
