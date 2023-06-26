@@ -73,6 +73,7 @@ public class AvisoService {
         avisoToUpdate.setTitulo(aviso.getTitulo());
         avisoToUpdate.setDescricao(aviso.getDescricao());
         avisoToUpdate.setDisciplina(disciplinaRepository.findById(idDisciplina));
+        avisoToUpdate.setDataReferente(aviso.getDataReferente());
         avisoRepository.persist(avisoToUpdate);
     }
 

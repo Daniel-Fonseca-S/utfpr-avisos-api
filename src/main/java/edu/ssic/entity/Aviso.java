@@ -41,5 +41,5 @@ public class Aviso {
     private Disciplina disciplina;
 
     @Column(name = "data_referente", nullable = false)
-    private ZonedDateTime dataReferente;
+    private LocalDateTime dataReferente;
 }
